@@ -1,0 +1,29 @@
+.trackRow {
+  display: flex;
+  align-items: center;
+  height: 5rem;
+  border-bottom: 1px solid #333;
+}
+
+.trackRow:last-child {
+  border-bottom: none;
+}
+
+.trackPlay {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background: #333;
+  box-shadow: 0;
+  border: 0;
+  margin-right: 1rem;
+  padding: 0;
+}
+
+.trackTitle {
+  font-weight: 600;
+}
+
+.trackArtist {
+  color: #767676;
+}

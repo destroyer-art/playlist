@@ -1,0 +1,43 @@
+.audioPlayer {
+  position: fixed;
+  bottom: 0.5rem;
+  left: 0.5rem;
+  right: 0.5rem;
+  height: 5rem;
+  background-color: #333;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+}
+
+.togglePlaybackButton {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0;
+  border: 0;
+  margin: 0 1.5rem 0 1rem;
+  padding: 0;
+}
+
+.trackInfo {
+  width: 12.5rem;
+}
+
+.trackTitle {
+  font-weight: 600;
+}
+
+.trackArtist {
+  color: #767676;
+}
+
+.sliderContainer {
+  flex-grow: 1;
+  margin-right: 1.5rem;
+}
+
+.slider {
+  width: 100%;
+}
