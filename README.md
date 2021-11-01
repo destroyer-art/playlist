@@ -1,6 +1,6 @@
 # Interview Coding Base
 
-Hi there! 
+Hi there!
 
 Looks like you already nailed the first part of this challenge - finding this repo. This repo contains everything you need to take our take-home assignment.
 
@@ -14,9 +14,9 @@ Below, we have defined what is required of your project, since we believe this w
 - Create, delete and list playlists
 - Add and remove tracks to a playlist
 
-If you want to add extra features or explore something you’re passionate about, we encourage you to do so, but we want to point out that we’re not evaluating you on the amount of time you have to spend on an assignment like this. 
+If you want to add extra features or explore something you’re passionate about, we encourage you to do so, but we want to point out that we’re not evaluating you on the amount of time you have to spend on an assignment like this.
 
-If you do want to extend upon the list above, there is more data returned from the API than what's being currently displayed. 
+If you do want to extend upon the list above, there is more data returned from the API than what's being currently displayed.
 
 Some inspiration on extra features:
 - Reorder tracks in playlist
