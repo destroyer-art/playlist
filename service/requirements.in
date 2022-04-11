@@ -1,0 +1,6 @@
+Django>=3.2.9,<4.0
+djangorestframework
+django-cors-headers
+requests
+psycopg2-binary>=2.8
+pip-tools
