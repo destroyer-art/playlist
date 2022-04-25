@@ -10,7 +10,7 @@ function App() {
   const [currentTrack, setCurrentTrack] = useState();
 
   useEffect(() => {
-    fetch("http://localhost:8000/tracks")
+    fetch("http://0.0.0.0:8000/tracks/", { mode: "cors" })
       .then((res) => res.json())
       .then((data) => setTracks(data));
   }, []);
