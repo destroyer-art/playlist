@@ -1,2 +1,2 @@
-FROM node:16.14-alpine3.15
+FROM node:16.16-alpine
 WORKDIR /code
