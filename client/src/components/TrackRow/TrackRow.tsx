@@ -1,5 +1,5 @@
 import React from "react";
-import { Track } from "../models/Track";
+import { Track } from "@models/Track";
 import styles from "./TrackRow.module.css";
 
 interface Props {

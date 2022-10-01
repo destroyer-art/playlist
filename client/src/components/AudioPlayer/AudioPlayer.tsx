@@ -1,5 +1,5 @@
 import React, { useRef, useState, useEffect } from "react";
-import { Track } from "../models/Track";
+import { Track } from "@models/Track";
 import styles from "./AudioPlayer.module.css";
 
 type AudioEvent = Event & {
