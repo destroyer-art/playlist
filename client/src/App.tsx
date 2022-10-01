@@ -2,10 +2,10 @@ import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import styles from "./App.module.css";
 
-import AudioPlayer from "./components/AudioPlayer";
-import Navigation from "./containers/Navigation";
-import PlaylistsWrapper from "./containers/PlaylistsWrapper";
-import TracksList from "./containers/TracksList";
+import AudioPlayer from "@components/AudioPlayer";
+import Navigation from "@containers/Navigation";
+import PlaylistsWrapper from "@containers/PlaylistsWrapper";
+import TracksList from "@containers/TracksList";
 
 function App() {
 	const [tracks, setTracks] = useState([]);

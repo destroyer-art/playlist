@@ -13,12 +13,14 @@
 		"resolveJsonModule": true,
 		"isolatedModules": true,
 		"noEmit": true,
-		"jsx": "react"
-		// "baseUrl": "src",
-		// "paths": {
-		// 	"@assets/*": ["assets/*"],
-		// 	"@components/*": ["components/*"]
-		// }
+		"jsx": "react",
+		"baseUrl": "src",
+		"paths": {
+			"@assets/*": ["assets/*"],
+			"@components/*": ["components/*"],
+			"@containers/*": ["containers/*"],
+			"@models/*": ["models/*"]
+		}
 	},
 	"include": ["src"]
 }
