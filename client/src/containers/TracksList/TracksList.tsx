@@ -1,5 +1,5 @@
 import React from "react";
-import TrackRow from "@components/TrackRow";
+import { TrackRow } from "../../components";
 import { Track } from "@models/Track";
 
 interface Props {

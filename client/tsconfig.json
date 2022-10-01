@@ -16,6 +16,7 @@
 		"jsx": "react",
 		"baseUrl": "src",
 		"paths": {
+			"@/*": ["src/*"],
 			"@assets/*": ["assets/*"],
 			"@components/*": ["components/*"],
 			"@containers/*": ["containers/*"],

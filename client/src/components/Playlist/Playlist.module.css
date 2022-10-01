@@ -1,0 +1,28 @@
+.listWrapper {
+	position: relative;
+	width: 180px;
+	height: 180px;
+	background: #515151;
+
+	box-shadow: inset 1px -124px 53px -41px rgba(0, 0, 0, 0.5);
+}
+.listWrapper ul {
+	gap: 0;
+	display: grid;
+	padding: 0;
+	grid-template-areas:
+		"img img"
+		"img img";
+	list-style-type: none;
+}
+
+.listWrapper ul li img {
+	height: 90px;
+}
+
+.listWrapper h3 {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	margin: 0%;
+}
