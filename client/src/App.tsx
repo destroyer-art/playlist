@@ -5,15 +5,16 @@ import styles from "./App.module.css";
 import { PlaylistsWrapper, TracksList, Navigation } from "./containers";
 import { AudioPlayer } from "./components";
 import ModalState from "context/modal/state";
+import SongsContext from "context/songs/context";
 
 function App() {
-	const [tracks, setTracks] = useState([]);
 	const [currentTrack, setCurrentTrack] = useState();
+	const { setAllSongs } = useContext(SongsContext);
 
 	useEffect(() => {
 		fetch("http://0.0.0.0:8000/tracks/", { mode: "cors" })
 			.then((res) => res.json())
-			.then((data) => setTracks(data));
+			.then((data) => setAllSongs(data));
 	}, []);
 
 	const handlePlay = (track: any) => setCurrentTrack(track);
@@ -27,7 +28,7 @@ function App() {
 						<Routes>
 							<Route
 								path="/"
-								element={<TracksList tracks={tracks} handlePlay={handlePlay} />}
+								element={<TracksList handlePlay={handlePlay} />}
 							/>
 							<Route path="/playlists" element={<PlaylistsWrapper />} />
 						</Routes>
