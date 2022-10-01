@@ -1,3 +1,10 @@
 .newPlaylistWrapper {
 	position: relative;
 }
+
+.playlistsOverview {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1rem;
+	margin-top: 30px;
+}

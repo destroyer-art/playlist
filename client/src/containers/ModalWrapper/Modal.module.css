@@ -41,6 +41,9 @@
 	font-weight: 600;
 	cursor: pointer;
 }
+.creatBtn:hover {
+	background-color: rgb(233, 232, 232);
+}
 
 .modalContainer input {
 	width: 600px;
@@ -50,7 +53,7 @@
 	margin: 10px 0 0 39px;
 	padding: 0px 13px;
 	font-family: "Epidemic", sans-serif;
-	color: #999797;
+	color: #b5b5b5;
 	font-size: 16px;
 	font-weight: 600;
 }

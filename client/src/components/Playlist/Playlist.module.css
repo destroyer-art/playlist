@@ -3,7 +3,7 @@
 	width: 180px;
 	height: 180px;
 	background: #515151;
-
+	cursor: pointer;
 	box-shadow: inset 1px -124px 53px -41px rgba(0, 0, 0, 0.5);
 }
 .listWrapper ul {
@@ -14,9 +14,13 @@
 		"img img"
 		"img img";
 	list-style-type: none;
+	margin: 0;
 }
 
-.listWrapper ul li img {
+li.soloImage img {
+	height: 180px;
+}
+li img {
 	height: 90px;
 }
 

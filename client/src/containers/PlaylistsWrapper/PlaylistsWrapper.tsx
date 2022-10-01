@@ -14,7 +14,16 @@ const PlaylistsWrapper = () => {
 
 	//useffect to fetch playlists
 	useEffect(() => {
-		setPlaylists([mockPlaylist, mockPlaylistSingle]);
+		setPlaylists([
+			mockPlaylist,
+			mockPlaylistSingle,
+			mockPlaylist,
+			mockPlaylistSingle,
+			mockPlaylist,
+			mockPlaylistSingle,
+			mockPlaylist,
+			mockPlaylistSingle,
+		]);
 	}, []);
 
 	return (
@@ -23,9 +32,13 @@ const PlaylistsWrapper = () => {
 				<CreatePlaylist />
 				{isOpen && <Modal />}
 			</div>
-			<div>
+			<div className={styles.playlistsOverview}>
 				{playlists.map((list) => (
-					<Playlist name={list.name} playlistTracks={list.tracks} />
+					<Playlist
+						name={list.name}
+						playlistTracks={list.tracks}
+						id={list.id}
+					/>
 				))}
 			</div>
 		</>
@@ -37,6 +50,7 @@ export default PlaylistsWrapper;
 //Delete these
 const mockPlaylistSingle = {
 	name: "Mocha",
+	id: "1",
 	tracks: [
 		{
 			id: "em55KruCAt",
@@ -59,6 +73,7 @@ const mockPlaylistSingle = {
 };
 
 const mockPlaylist = {
+	id: "2",
 	name: "Hot Hits",
 	tracks: [
 		{
