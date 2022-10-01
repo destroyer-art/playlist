@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import styles from "./App.module.css";
-import logo from "./assets/logo.svg";
+
 import AudioPlayer from "./components/AudioPlayer";
-import TrackRow from "./components/TrackRow";
+import Navigation from "./containers/Navigation";
+import PlaylistsWrapper from "./containers/PlaylistsWrapper";
+import TracksList from "./containers/TracksList";
 
 function App() {
 	const [tracks, setTracks] = useState([]);
@@ -22,22 +25,16 @@ function App() {
 	return (
 		<>
 			<main className={styles.app}>
-				<nav>
-					<img src={logo} className={styles.logo} alt="Logo" />
-					<ul className={styles.menu}>
-						<li>
-							<a href="#" className={styles.active}>
-								Tracks
-							</a>
-						</li>
-						<li>
-							<a href="#">Playlists</a>
-						</li>
-					</ul>
-				</nav>
-				{tracks.map((track, ix) => (
-					<TrackRow key={ix} track={track} handlePlay={handlePlay} />
-				))}
+				<Router>
+					<Navigation />
+					<Routes>
+						<Route
+							path="/"
+							element={<TracksList tracks={tracks} handlePlay={handlePlay} />}
+						/>
+						<Route path="/playlists" element={<PlaylistsWrapper />} />
+					</Routes>
+				</Router>
 			</main>
 			{currentTrack && <AudioPlayer track={currentTrack} />}
 		</>

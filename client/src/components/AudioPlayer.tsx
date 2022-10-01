@@ -37,7 +37,6 @@ const AudioPlayer = ({ track }: { track: Track }) => {
 	};
 
 	useEffect(() => {
-		console.log(audioRef.current);
 		audioRef.current.addEventListener("play", handlePlay);
 		audioRef.current.addEventListener("pause", handlePause);
 		audioRef.current.addEventListener("timeupdate", handleTimeUpdate);
