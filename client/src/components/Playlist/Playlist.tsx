@@ -20,7 +20,7 @@ const Playlist = ({ name, playlistTracks = [] }: Props) => {
 		<div className={styles.listWrapper}>
 			<ul>
 				{previewTracks.map((track) => (
-					<li>
+					<li key={track.id}>
 						<img src={track.cover_art} alt={track.title} />
 					</li>
 				))}

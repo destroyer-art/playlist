@@ -1,22 +1,32 @@
+import React, { useContext, useEffect, useState } from "react";
 import { Playlist } from "../../components";
-import React, { useEffect, useState } from "react";
 import { IPlaylist } from "@models/Playlist";
+import { CreatePlaylist } from "../../components";
+import ModalContext from "context/modal/context";
 
 interface Props {}
 
-const PlaylistsWrapper: React.FC<Props> = () => {
+const PlaylistsWrapper = () => {
 	const [playlists, setPlaylists] = useState<IPlaylist[]>([]);
+	const { isOpen } = useContext(ModalContext);
+
 	//useffect to fetch playlists
 	useEffect(() => {
 		setPlaylists([mockPlaylist, mockPlaylistSingle]);
 	}, []);
 
 	return (
-		<div>
-			{playlists.map((list) => (
-				<Playlist name={list.name} playlistTracks={list.tracks} />
-			))}
-		</div>
+		<>
+			<div>
+				<CreatePlaylist />
+				{isOpen ? "open" : "not Open"}
+			</div>
+			<div>
+				{playlists.map((list) => (
+					<Playlist name={list.name} playlistTracks={list.tracks} />
+				))}
+			</div>
+		</>
 	);
 };
 
