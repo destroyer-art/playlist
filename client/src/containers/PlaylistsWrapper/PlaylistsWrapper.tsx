@@ -3,6 +3,8 @@ import { Playlist } from "../../components";
 import { IPlaylist } from "@models/Playlist";
 import { CreatePlaylist } from "../../components";
 import ModalContext from "context/modal/context";
+import { Modal } from "..";
+import styles from "./Styles.module.css";
 
 interface Props {}
 
@@ -17,9 +19,9 @@ const PlaylistsWrapper = () => {
 
 	return (
 		<>
-			<div>
+			<div className={styles.newPlaylistWrapper}>
 				<CreatePlaylist />
-				{isOpen ? "open" : "not Open"}
+				{isOpen && <Modal />}
 			</div>
 			<div>
 				{playlists.map((list) => (

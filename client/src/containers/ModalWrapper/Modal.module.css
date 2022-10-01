@@ -1,0 +1,21 @@
+.modalContainer {
+	top: 0;
+	z-index: 1;
+	width: 90vw;
+	height: 55vh;
+	background: pink;
+	position: absolute;
+}
+
+.modalContainer button img {
+	height: auto;
+	width: 10%;
+}
+.modalContainer button {
+	border: none;
+	display: flex;
+	background: transparent;
+	justify-content: flex-end;
+	position: absolute;
+	right: 0;
+}

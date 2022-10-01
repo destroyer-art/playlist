@@ -13,10 +13,7 @@ function App() {
 	useEffect(() => {
 		fetch("http://0.0.0.0:8000/tracks/", { mode: "cors" })
 			.then((res) => res.json())
-			.then((data) => {
-				console.log({ data });
-				return setTracks(data);
-			});
+			.then((data) => setTracks(data));
 	}, []);
 
 	const handlePlay = (track: any) => setCurrentTrack(track);
