@@ -1,11 +1,17 @@
 import React, { useState, useEffect, useContext } from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import {
+	BrowserRouter as Router,
+	Routes,
+	Route,
+	redirect as Redirect,
+} from "react-router-dom";
 import styles from "./App.module.css";
 
 import { PlaylistsWrapper, TracksList, Navigation } from "./containers";
 import { AudioPlayer } from "./components";
 import ModalState from "context/modal/state";
 import SongsContext from "context/songs/context";
+import PlaylistState from "context/playlists/state";
 
 function App() {
 	const [currentTrack, setCurrentTrack] = useState();
@@ -21,20 +27,22 @@ function App() {
 
 	return (
 		<>
-			<ModalState>
-				<main className={styles.app}>
-					<Router>
-						<Navigation />
-						<Routes>
-							<Route
-								path="/"
-								element={<TracksList handlePlay={handlePlay} />}
-							/>
-							<Route path="/playlists" element={<PlaylistsWrapper />} />
-						</Routes>
-					</Router>
-				</main>
-			</ModalState>
+			<PlaylistState>
+				<ModalState>
+					<main className={styles.app}>
+						<Router>
+							<Navigation />
+							<Routes>
+								<Route
+									path="/tracks"
+									element={<TracksList handlePlay={handlePlay} />}
+								/>
+								<Route path="/playlists" element={<PlaylistsWrapper />} />
+							</Routes>
+						</Router>
+					</main>
+				</ModalState>
+			</PlaylistState>
 			{currentTrack && <AudioPlayer track={currentTrack} />}
 		</>
 	);

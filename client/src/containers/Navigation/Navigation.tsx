@@ -11,7 +11,7 @@ const Navigation: React.FC<Props> = () => {
 			<img src={logo} className={styles.logo} alt="Logo" />
 			<ul className={styles.menu}>
 				<li>
-					<NavLink to="/">Tracks</NavLink>
+					<NavLink to="/tracks">Tracks</NavLink>
 				</li>
 				<li>
 					<NavLink to="/playlists">Playlists</NavLink>

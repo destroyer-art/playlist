@@ -5,17 +5,66 @@
 	height: 55vh;
 	background: pink;
 	position: absolute;
+	overflow-y: scroll;
+	border-radius: 4px;
+}
+.modalContainer::-webkit-scrollbar {
+	display: none;
 }
 
-.modalContainer button img {
-	height: auto;
-	width: 10%;
-}
-.modalContainer button {
-	border: none;
+.topSection {
+	position: sticky;
+	top: 0;
 	display: flex;
-	background: transparent;
-	justify-content: flex-end;
+}
+
+.modalContainer img {
+	width: 3%;
+	top: 10px;
+	right: 10px;
+	height: auto;
+	opacity: 0.65;
+	cursor: pointer;
 	position: absolute;
-	right: 0;
+}
+
+.creatBtn {
+	width: 100px;
+	height: 50px;
+	background: white;
+	border: none;
+	border-radius: 6px;
+	margin: 10px 0 0 39px;
+	font-family: "Epidemic", sans-serif;
+	color: #999797;
+	font-size: 16px;
+	font-weight: 600;
+	cursor: pointer;
+}
+
+.modalContainer input {
+	width: 600px;
+	height: 50px;
+	border: none;
+	border-radius: 6px;
+	margin: 10px 0 0 39px;
+	padding: 0px 13px;
+	font-family: "Epidemic", sans-serif;
+	color: #999797;
+	font-size: 16px;
+	font-weight: 600;
+}
+.modalContainer input:focus {
+	outline: none;
+}
+
+.availableSongsContainer ul {
+	list-style: none;
+}
+.availableSongsContainer ul li {
+	cursor: pointer;
+}
+
+.availableSongsContainer ul li:hover {
+	background-color: rgb(210, 156, 165);
 }
