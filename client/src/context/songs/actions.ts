@@ -1,1 +1,2 @@
 export const SET_ALL_SONGS = "SET_ALL_SONGS";
+export const SET_CURRENT_SONG = "SET_CURRENT_SONG";

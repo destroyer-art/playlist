@@ -7,6 +7,8 @@ import { songsReducer } from "./reducer";
 const SongState = (props: any) => {
 	const initialState = {
 		tracks: [],
+		currentTrack: {} as Track,
+		setCurrentSong: () => {},
 		setAllSongs: () => {},
 	} as ISongsContext;
 
@@ -20,10 +22,20 @@ const SongState = (props: any) => {
 			payload: songs,
 		});
 	};
+
+	const setCurrentSong = (song: Track) => {
+		dispatch({
+			type: modalActions.SET_CURRENT_SONG,
+			payload: song,
+		});
+	};
+
 	return (
 		<SongsContext.Provider
 			value={{
 				tracks: state.tracks,
+				currentTrack: state.currentTrack,
+				setCurrentSong,
 				setAllSongs,
 			}}
 		>

@@ -8,6 +8,11 @@ export const songsReducer = (state: ISongsContext, action: any) => {
 				...state,
 				tracks: action.payload,
 			};
+		case songActions.SET_CURRENT_SONG:
+			return {
+				...state,
+				currentTrack: action.payload,
+			};
 		default:
 			return state;
 	}

@@ -12,10 +12,11 @@ import { AudioPlayer } from "./components";
 import ModalState from "context/modal/state";
 import SongsContext from "context/songs/context";
 import PlaylistState from "context/playlists/state";
+import { Track } from "@models/Track";
 
 function App() {
-	const [currentTrack, setCurrentTrack] = useState();
-	const { setAllSongs } = useContext(SongsContext);
+	const { setAllSongs, setCurrentSong, currentTrack } =
+		useContext(SongsContext);
 
 	useEffect(() => {
 		fetch("http://0.0.0.0:8000/tracks/", { mode: "cors" })
@@ -23,7 +24,7 @@ function App() {
 			.then((data) => setAllSongs(data));
 	}, []);
 
-	const handlePlay = (track: any) => setCurrentTrack(track);
+	const handlePlay = (track: Track) => setCurrentSong(track);
 
 	return (
 		<>
