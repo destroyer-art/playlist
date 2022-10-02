@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useState } from "react";
 import styles from "./Modal.module.css";
 import ModalContext from "context/modal/context";
 import close from "../../assets/close_icon.svg";
@@ -11,6 +11,7 @@ const Modal = () => {
 	const { createPlaylist } = useContext(PlaylistsContext);
 
 	const [playlistName, setPlaylistName] = useState("New Playlist");
+
 	const [selectedForPlaylist, updateSelectedForPlaylist] = useState<string[]>(
 		[]
 	);
@@ -39,9 +40,10 @@ const Modal = () => {
 	};
 
 	const handleOnPlaylistCreate = () => {
-		if (!selectedForPlaylist.length) return;
+		if (!selectedForPlaylist.length) return; //display an error that new list is empty
 		createPlaylist(playlistName, selectedForPlaylist);
 	};
+
 	return (
 		<div className={styles.modalContainer}>
 			<div className={styles.topSection}>

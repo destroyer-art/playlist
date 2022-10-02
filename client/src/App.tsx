@@ -1,13 +1,13 @@
 import React, { useState, useEffect, useContext } from "react";
-import {
-	BrowserRouter as Router,
-	Routes,
-	Route,
-	redirect as Redirect,
-} from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import styles from "./App.module.css";
 
-import { PlaylistsWrapper, TracksList, Navigation } from "./containers";
+import {
+	PlaylistsWrapper,
+	TracksList,
+	Navigation,
+	PlaylistViewWrapper,
+} from "./containers";
 import { AudioPlayer } from "./components";
 import ModalState from "context/modal/state";
 import SongsContext from "context/songs/context";
@@ -38,6 +38,10 @@ function App() {
 									element={<TracksList handlePlay={handlePlay} />}
 								/>
 								<Route path="/playlists" element={<PlaylistsWrapper />} />
+								<Route
+									path="/playlists/:id"
+									element={<PlaylistViewWrapper />}
+								/>
 							</Routes>
 						</Router>
 					</main>

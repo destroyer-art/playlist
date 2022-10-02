@@ -13,6 +13,11 @@ export const playlistReducer = (state: IPlaylists, action: any) => {
 				...state,
 				isLoading: false,
 			};
+		case playlistActions.SET_PLAYLISTS:
+			return {
+				...state,
+				playlists: action.playlists,
+			};
 		default:
 			return state;
 	}
