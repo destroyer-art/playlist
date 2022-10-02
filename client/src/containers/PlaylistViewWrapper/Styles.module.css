@@ -1,3 +1,7 @@
+.playlistPreview {
+	position: relative;
+}
+
 .titleBar {
 	display: flex;
 	align-items: center;

@@ -26,7 +26,7 @@ const PlaylistState = (props: any) => {
 		//dispatch({type: playlistActions.CREATE_PLAYLIST_SUCCESS});
 		// or
 		//dispatch({type: playlistActions.CREATE_PLAYLIST_FAILURE});
-		console.log(name, track_ids);
+		console.log("Create playlist", { name, track_ids });
 	};
 
 	const setPlaylists = (playlists: IPlaylistWithId) => {
@@ -52,19 +52,20 @@ const PlaylistState = (props: any) => {
 		//redirect to playlists page
 	};
 
-	const editPlaylist = (id: string) => {
-		console.log({ edit: id });
-
+	const editPlaylist = (playlistId: string, track_ids: string[]) => {
 		dispatch({
 			type: playlistActions.UPDATE_PLAYLIST,
 		});
-		//make DELETE request with id
+		//make PUT request with id
 		//dispatch({type: playlistActions.UPDATE_PLAYLIST_SUCCESS});
 		// or
 		//dispatch({type: playlistActions.UPDATE_PLAYLIST_FAILURE});
 
 		//redirect to playlists page
+
+		console.log("Edit playlist", { playlistId, track_ids });
 	};
+
 	return (
 		<PlaylistContext.Provider
 			value={{

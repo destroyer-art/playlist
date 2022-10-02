@@ -14,11 +14,10 @@ interface Props {
 const Modal = ({ playlistId }: Props) => {
 	const { tracks } = useContext(SongsContext);
 	const { closeModal } = useContext(ModalContext);
-	const { createPlaylist, playlists } = useContext(PlaylistsContext);
+	const { createPlaylist, editPlaylist, playlists } =
+		useContext(PlaylistsContext);
 
 	const [playlistName, setPlaylistName] = useState("New Playlist");
-	const [playlistInEdit, setPlaylistInEdit] = useState<IPlaylist | null>(null);
-
 	const [selectedForPlaylist, updateSelectedForPlaylist] = useState<string[]>(
 		[]
 	);
@@ -26,7 +25,7 @@ const Modal = ({ playlistId }: Props) => {
 	useEffect(() => {
 		if (playlistId && playlists[playlistId]) {
 			setPlaylistName(playlists[playlistId].name);
-			setPlaylistInEdit(playlists[playlistId]);
+			updateSelectedForPlaylist(playlists[playlistId].tracks.map((t) => t.id));
 		}
 	}, [playlistId]);
 
@@ -45,17 +44,21 @@ const Modal = ({ playlistId }: Props) => {
 				? element?.classList.remove("selected")
 				: element?.classList.add("selected");
 		}
-		//move to its own hook
+
 		updateSelectedForPlaylist((selected) => {
-			const index = selected.indexOf(id);
-			index !== -1 ? selected.splice(index, 1) : selected.push(id);
-			return selected;
+			const i = selected.indexOf(id);
+			if (i == -1) return [...selected, id];
+			return selected.filter((c) => c !== id);
 		});
 	};
 
 	const handleOnPlaylistCreate = () => {
 		if (!selectedForPlaylist.length) return; //display an error that new list is empty
 		createPlaylist(playlistName, selectedForPlaylist);
+	};
+	const handleOnPlaylistEdit = () => {
+		if (!selectedForPlaylist.length) return; //display an error that new list is empty
+		editPlaylist(playlistId!, selectedForPlaylist);
 	};
 
 	const handleOnModalClose = () => closeModal();
@@ -65,9 +68,15 @@ const Modal = ({ playlistId }: Props) => {
 			<div className={styles.topSection}>
 				<img onClick={handleOnModalClose} src={close} alt="close" />
 				<input type="text" value={playlistName} onChange={handleNameChange} />
-				<button className={styles.creatBtn} onClick={handleOnPlaylistCreate}>
-					{playlistId ? "Update" : "Create"}
-				</button>
+				{playlistId ? (
+					<button className={styles.creatBtn} onClick={handleOnPlaylistEdit}>
+						Update
+					</button>
+				) : (
+					<button className={styles.creatBtn} onClick={handleOnPlaylistCreate}>
+						Create
+					</button>
+				)}
 			</div>
 			<div className={styles.availableSongsContainer}>
 				<ul ref={availableTracksRef}>
@@ -77,10 +86,7 @@ const Modal = ({ playlistId }: Props) => {
 							key={track.id}
 							onClick={() => toggleSelectTrack(track.id)}
 							className={
-								playlistInEdit &&
-								playlistInEdit.tracks.some((t) => t.id === track.id)
-									? "selected"
-									: ""
+								selectedForPlaylist.includes(track.id) ? "selected" : ""
 							}
 						>
 							{track.title} by {track.main_artists}

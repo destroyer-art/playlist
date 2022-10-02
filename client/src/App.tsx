@@ -1,5 +1,10 @@
 import React, { useState, useEffect, useContext } from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import {
+	BrowserRouter as Router,
+	Routes,
+	Route,
+	redirect,
+} from "react-router-dom";
 import styles from "./App.module.css";
 
 import {

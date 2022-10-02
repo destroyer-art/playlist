@@ -7,7 +7,7 @@ import { songsReducer } from "./reducer";
 const SongState = (props: any) => {
 	const initialState = {
 		tracks: [],
-		currentTrack: {} as Track,
+		currentTrack: undefined,
 		setCurrentSong: () => {},
 		setAllSongs: () => {},
 	} as ISongsContext;

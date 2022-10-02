@@ -8,8 +8,6 @@ import styles from "./Styles.module.css";
 import ModalContext from "context/modal/context";
 import { Modal } from "..";
 
-interface Props {}
-
 const PlaylistViewWrapper = () => {
 	const { id = "" } = useParams();
 	const { playlists } = useContext(PlaylistsContext);
@@ -17,7 +15,7 @@ const PlaylistViewWrapper = () => {
 	const { isOpenEdit } = useContext(ModalContext);
 
 	return (
-		<div>
+		<div className={styles.playlistPreview}>
 			<div className={styles.titleBar}>
 				<h2>{playlists[id].name}</h2>
 				<div className={styles.menu}>

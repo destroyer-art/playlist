@@ -63,9 +63,11 @@
 
 .availableSongsContainer ul {
 	list-style: none;
+	padding: 0;
 }
 .availableSongsContainer ul li {
 	cursor: pointer;
+	padding: 0 36px;
 }
 
 .availableSongsContainer ul li:hover {
