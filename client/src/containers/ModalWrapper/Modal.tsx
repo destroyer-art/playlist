@@ -1,25 +1,35 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import styles from "./Modal.module.css";
 import ModalContext from "context/modal/context";
 import close from "../../assets/close_icon.svg";
 import SongsContext from "context/songs/context";
 import { useRef } from "react";
 import PlaylistsContext from "context/playlists/context";
+import { IPlaylist } from "@models/Playlist";
 
 interface Props {
 	readonly playlistId?: string;
 }
 
 const Modal = ({ playlistId }: Props) => {
+	const { tracks } = useContext(SongsContext);
 	const { closeModal } = useContext(ModalContext);
-	const { createPlaylist } = useContext(PlaylistsContext);
+	const { createPlaylist, playlists } = useContext(PlaylistsContext);
 
 	const [playlistName, setPlaylistName] = useState("New Playlist");
+	const [playlistInEdit, setPlaylistInEdit] = useState<IPlaylist | null>(null);
 
 	const [selectedForPlaylist, updateSelectedForPlaylist] = useState<string[]>(
 		[]
 	);
-	const { tracks } = useContext(SongsContext);
+
+	useEffect(() => {
+		if (playlistId && playlists[playlistId]) {
+			setPlaylistName(playlists[playlistId].name);
+			setPlaylistInEdit(playlists[playlistId]);
+		}
+	}, [playlistId]);
+
 	const availableTracksRef = useRef<HTMLUListElement>(null);
 
 	const handleNameChange = (e: React.FormEvent<HTMLInputElement>) => {
@@ -66,6 +76,12 @@ const Modal = ({ playlistId }: Props) => {
 							id={track.id}
 							key={track.id}
 							onClick={() => toggleSelectTrack(track.id)}
+							className={
+								playlistInEdit &&
+								playlistInEdit.tracks.some((t) => t.id === track.id)
+									? "selected"
+									: ""
+							}
 						>
 							{track.title} by {track.main_artists}
 						</li>

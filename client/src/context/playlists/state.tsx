@@ -1,4 +1,4 @@
-import { IPlaylist } from "@models/Playlist";
+import { IPlaylistWithId } from "@models/Playlist";
 import React, { useReducer } from "react";
 import * as playlistActions from "./actions";
 import PlaylistContext, { IPlaylists } from "./context";
@@ -29,7 +29,7 @@ const PlaylistState = (props: any) => {
 		console.log(name, track_ids);
 	};
 
-	const setPlaylists = (playlists: IPlaylist) => {
+	const setPlaylists = (playlists: IPlaylistWithId) => {
 		dispatch({
 			type: playlistActions.SET_PLAYLISTS,
 			payload: playlists,

@@ -33,7 +33,7 @@ const AudioPlayer = ({ track }: { track: Track }) => {
 
 	const handleSliderChange = (e: AudioEvent) => {
 		audioRef.current.currentTime =
-			(e.target.value / 1000) * audioRef.current.duration;
+			(+e.target.value / 1000) * audioRef.current.duration;
 	};
 
 	const handleTogglePlaybackClick = () => {
