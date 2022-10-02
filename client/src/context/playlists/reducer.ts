@@ -4,11 +4,13 @@ import { IPlaylists } from "./context";
 export const playlistReducer = (state: IPlaylists, action: any) => {
 	switch (action.type) {
 		case playlistActions.CREATE_PLAYLIST:
+		case playlistActions.DELETE_PLAYLIST:
 			return {
 				...state,
 				isLoading: true,
 			};
 		case playlistActions.CREATE_PLAYLIST_SUCCESS:
+		case playlistActions.DELETE_PLAYLIST_SUCCESS:
 			return {
 				...state,
 				isLoading: false,

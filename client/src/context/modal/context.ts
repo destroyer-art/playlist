@@ -1,8 +1,11 @@
 import { createContext } from "react";
 
 export interface IModal {
-	isOpen: boolean;
-	toggleModal: () => void;
+	isOpenEdit: boolean;
+	isOpenCreate: boolean;
+	closeModal: () => void;
+	toggleOpenCreate: () => void;
+	toggleOpenEdit: (playlistId: string) => void;
 }
 
 const ModalContext = createContext({} as IModal);

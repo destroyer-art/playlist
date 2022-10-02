@@ -1,0 +1,8 @@
+.titleBar {
+	display: flex;
+	align-items: center;
+}
+
+.menu {
+	margin: 6px 4px 0 4px;
+}

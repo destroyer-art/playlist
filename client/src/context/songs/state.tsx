@@ -15,15 +15,13 @@ const SongState = (props: any) => {
 	const [state, dispatch] = useReducer(songsReducer, initialState);
 
 	const setAllSongs = (songs: Track[]) => {
-		console.log({ songs });
-
 		dispatch({
 			type: modalActions.SET_ALL_SONGS,
 			payload: songs,
 		});
 	};
 
-	const setCurrentSong = (song: Track) => {
+	const setCurrentSong = (song?: Track) => {
 		dispatch({
 			type: modalActions.SET_CURRENT_SONG,
 			payload: song,

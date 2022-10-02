@@ -1,0 +1,27 @@
+.dropdownWrapper {
+	cursor: pointer;
+	position: relative;
+}
+
+.menu {
+	position: absolute;
+	background: white;
+	color: black;
+	width: 129px;
+	height: 45px;
+	border-radius: 3px;
+	display: flex;
+	gap: 3px;
+	flex-direction: column;
+	align-items: flex-start;
+	list-style: none;
+	padding: 5px 0;
+}
+
+.menu li {
+	width: 92%;
+	padding: 0px 5px;
+}
+.menu li:hover {
+	background: rgb(239, 228, 228);
+}

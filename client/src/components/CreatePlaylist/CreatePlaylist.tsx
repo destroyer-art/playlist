@@ -4,10 +4,10 @@ import ModalContext from "context/modal/context";
 import { useContext } from "react";
 
 const CreatePlaylist = () => {
-	const { toggleModal } = useContext(ModalContext);
+	const { toggleOpenCreate } = useContext(ModalContext);
 
 	return (
-		<button className={styles.btn} onClick={toggleModal}>
+		<button className={styles.btn} onClick={toggleOpenCreate}>
 			New Playlist
 		</button>
 	);

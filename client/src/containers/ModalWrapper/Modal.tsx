@@ -6,8 +6,12 @@ import SongsContext from "context/songs/context";
 import { useRef } from "react";
 import PlaylistsContext from "context/playlists/context";
 
-const Modal = () => {
-	const { toggleModal } = useContext(ModalContext);
+interface Props {
+	readonly playlistId?: string;
+}
+
+const Modal = ({ playlistId }: Props) => {
+	const { closeModal } = useContext(ModalContext);
 	const { createPlaylist } = useContext(PlaylistsContext);
 
 	const [playlistName, setPlaylistName] = useState("New Playlist");
@@ -44,13 +48,15 @@ const Modal = () => {
 		createPlaylist(playlistName, selectedForPlaylist);
 	};
 
+	const handleOnModalClose = () => closeModal();
+
 	return (
 		<div className={styles.modalContainer}>
 			<div className={styles.topSection}>
-				<img onClick={toggleModal} src={close} alt="close" />
+				<img onClick={handleOnModalClose} src={close} alt="close" />
 				<input type="text" value={playlistName} onChange={handleNameChange} />
 				<button className={styles.creatBtn} onClick={handleOnPlaylistCreate}>
-					Create
+					{playlistId ? "Update" : "Create"}
 				</button>
 			</div>
 			<div className={styles.availableSongsContainer}>

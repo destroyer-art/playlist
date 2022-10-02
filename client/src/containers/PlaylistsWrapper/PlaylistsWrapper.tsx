@@ -7,7 +7,7 @@ import styles from "./Styles.module.css";
 import PlaylistsContext from "context/playlists/context";
 
 const PlaylistsWrapper = () => {
-	const { isOpen } = useContext(ModalContext);
+	const { isOpenCreate } = useContext(ModalContext);
 	const { playlists } = useContext(PlaylistsContext);
 
 	//useffect to fetch playlists
@@ -19,7 +19,7 @@ const PlaylistsWrapper = () => {
 		<>
 			<div className={styles.newPlaylistWrapper}>
 				<CreatePlaylist />
-				{isOpen && <Modal />}
+				{isOpenCreate && <Modal />}
 			</div>
 			<div className={styles.playlistsOverview}>
 				{Object.entries(playlists).map(([id, list]) => (

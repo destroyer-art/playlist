@@ -11,6 +11,8 @@ const PlaylistState = (props: any) => {
 		isLoading: false,
 		setPlaylists: () => {},
 		createPlaylist: () => {},
+		deletePlaylist: () => {},
+		editPlaylist: () => {},
 		selectPlaylist: () => ({}),
 	} as IPlaylists;
 
@@ -36,6 +38,33 @@ const PlaylistState = (props: any) => {
 
 	const selectPlaylist = (id: string) => state.playlists[id];
 
+	const deletePlaylist = (id: string) => {
+		console.log({ delete: id });
+
+		dispatch({
+			type: playlistActions.DELETE_PLAYLIST,
+		});
+		//make DELETE request with id
+		//dispatch({type: playlistActions.DELETE_PLAYLIST_SUCCESS});
+		// or
+		//dispatch({type: playlistActions.DELETE_PLAYLIST_FAILURE});
+
+		//redirect to playlists page
+	};
+
+	const editPlaylist = (id: string) => {
+		console.log({ edit: id });
+
+		dispatch({
+			type: playlistActions.UPDATE_PLAYLIST,
+		});
+		//make DELETE request with id
+		//dispatch({type: playlistActions.UPDATE_PLAYLIST_SUCCESS});
+		// or
+		//dispatch({type: playlistActions.UPDATE_PLAYLIST_FAILURE});
+
+		//redirect to playlists page
+	};
 	return (
 		<PlaylistContext.Provider
 			value={{
@@ -44,6 +73,8 @@ const PlaylistState = (props: any) => {
 				createPlaylist,
 				selectPlaylist,
 				setPlaylists,
+				deletePlaylist,
+				editPlaylist,
 			}}
 		>
 			{props.children}

@@ -5,10 +5,21 @@ import { modalReducer } from "./reducer";
 
 const ModalState = (props: any) => {
 	const initialState = {
-		isOpen: false,
-		toggleModal: () => {
+		isOpenEdit: false,
+		isOpenCreate: false,
+		toggleOpenEdit: (playlistId: string) => {
 			dispatch({
-				type: modalActions.TOGGLE_MODAL,
+				type: modalActions.TOGGLE_MODAL_EDIT,
+			});
+		},
+		toggleOpenCreate: () => {
+			dispatch({
+				type: modalActions.TOGGLE_MODAL_CREATE,
+			});
+		},
+		closeModal: () => {
+			dispatch({
+				type: modalActions.CLOSE_MODAL,
 			});
 		},
 	} as IModal;
@@ -18,8 +29,11 @@ const ModalState = (props: any) => {
 	return (
 		<ModalContext.Provider
 			value={{
-				isOpen: state.isOpen,
-				toggleModal: state.toggleModal,
+				isOpenEdit: state.isOpenEdit,
+				isOpenCreate: state.isOpenCreate,
+				closeModal: state.closeModal,
+				toggleOpenEdit: state.toggleOpenEdit,
+				toggleOpenCreate: state.toggleOpenCreate,
 			}}
 		>
 			{props.children}
