@@ -24,7 +24,7 @@ class Mood(models.Model):
 
 
 class Track(models.Model):
-    id = models.CharField(primary_key=True, max_length=10)
+    id = models.CharField(primary_key=True, max_length=100)
     title = models.CharField(max_length=200, null=False)
     genres = models.ManyToManyField(Genre, related_name="genre")
     moods = models.ManyToManyField(Mood, related_name="mood")
@@ -51,12 +51,24 @@ class Track(models.Model):
 
 
 class Playlist(models.Model):
-    id = models.CharField(primary_key=True, max_length=10)
+    id = models.CharField(primary_key=True, max_length=100)
     name = models.CharField(max_length=200, null=False)
 
+    def __str__(self):
+        return self.name
+    
+    def create_playlist(self, data):
+        playlist = self.create(data)
+        # do something with the book
+        return playlist
+
+
 class PlaylistTrack(models.Model):
-    id = models.CharField(primary_key=True, max_length=10)
+    id = models.CharField(primary_key=True, max_length=100)
     playlist = models.ForeignKey(Playlist, on_delete=models.CASCADE)
     track = models.ForeignKey(Track, on_delete=models.CASCADE)
+    
+    def __str__(self):
+        return self.name
     
 

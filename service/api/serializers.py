@@ -2,7 +2,6 @@ from rest_framework import serializers
 
 from . import models
 
-
 class TrackSerializer(serializers.ModelSerializer):
     genres = serializers.StringRelatedField(many=True)
     moods = serializers.StringRelatedField(many=True)
@@ -36,3 +35,4 @@ class PlaylistSerializer(serializers.ModelSerializer):
             "name",
             "tracks"
         ]
+
