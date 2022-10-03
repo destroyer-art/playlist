@@ -2,7 +2,7 @@ import React, { useRef, useState, useEffect } from "react";
 import { Track } from "@models/Track";
 import styles from "./AudioPlayer.module.css";
 import { useContext } from "react";
-import SongsContext from "context/songs/context";
+import TracksContext from "context/songs/context";
 
 type AudioEvent = Event & {
 	target: { currentTime: number; duration: number; value: number };
@@ -11,7 +11,7 @@ type AudioEvent = Event & {
 const AudioPlayer = ({ track }: { track: Track }) => {
 	const [isPlaying, setIsPlaying] = useState(false);
 	const [progress, setProgress] = useState(0);
-	const { setCurrentSong } = useContext(SongsContext);
+	const { setCurrentTrack } = useContext(TracksContext);
 	const audioRef = useRef<HTMLAudioElement>({} as HTMLAudioElement);
 
 	const handlePlay = () => {
@@ -23,7 +23,7 @@ const AudioPlayer = ({ track }: { track: Track }) => {
 	};
 
 	const handlePlaybackEnded = () => {
-		setCurrentSong(undefined);
+		setCurrentTrack(undefined);
 		setIsPlaying(false);
 	};
 

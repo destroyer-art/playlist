@@ -1,14 +1,14 @@
 import * as songActions from "./actions";
-import { ISongsContext } from "./context";
+import { ITracksContext } from "./context";
 
-export const songsReducer = (state: ISongsContext, action: any) => {
+export const tracksReducer = (state: ITracksContext, action: any) => {
 	switch (action.type) {
-		case songActions.SET_ALL_SONGS:
+		case songActions.SET_ALL_TRACKS:
 			return {
 				...state,
 				tracks: action.payload,
 			};
-		case songActions.SET_CURRENT_SONG:
+		case songActions.SET_CURRENT_TRACK:
 			return {
 				...state,
 				currentTrack: action.payload,

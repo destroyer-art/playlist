@@ -16,21 +16,19 @@ import {
 } from "./containers";
 import { AudioPlayer } from "./components";
 import ModalState from "context/modal/state";
-import SongsContext from "context/songs/context";
+import TracksContext from "context/songs/context";
 import PlaylistState from "context/playlists/state";
 import { Track } from "@models/Track";
 
 function App() {
-	const { setAllSongs, setCurrentSong, currentTrack } =
-		useContext(SongsContext);
+	const { fetchTracks, setCurrentTrack, currentTrack } =
+		useContext(TracksContext);
 
 	useEffect(() => {
-		fetch("http://0.0.0.0:3000/allTracks", { mode: "cors" })
-			.then((res) => res.json())
-			.then((data) => setAllSongs(data));
+		fetchTracks();
 	}, []);
 
-	const handlePlay = (track: Track) => setCurrentSong(track);
+	const handlePlay = (track: Track) => setCurrentTrack(track);
 
 	return (
 		<>

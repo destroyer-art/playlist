@@ -1,2 +1,2 @@
-export const SET_ALL_SONGS = "SET_ALL_SONGS";
-export const SET_CURRENT_SONG = "SET_CURRENT_SONG";
+export const SET_ALL_TRACKS = "SET_ALL_TRACKS";
+export const SET_CURRENT_TRACK = "SET_CURRENT_TRACK";

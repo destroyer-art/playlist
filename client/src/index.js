@@ -3,13 +3,13 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import SongState from "context/songs/state";
+import TracksState from "context/songs/state";
 
 ReactDOM.render(
   <React.StrictMode>
-    <SongState>
+    <TracksState>
       <App />
-    </SongState>
+    </TracksState>
   </React.StrictMode>,
   document.getElementById('root')
 );

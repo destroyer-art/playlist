@@ -3,7 +3,7 @@ import { TrackRow, DropdownMenu } from "../../components";
 import PlaylistsContext from "context/playlists/context";
 import { useContext } from "react";
 import { useParams } from "react-router-dom";
-import SongsContext from "context/songs/context";
+import TracksContext from "context/songs/context";
 import styles from "./Styles.module.css";
 import ModalContext from "context/modal/context";
 import { Modal } from "..";
@@ -11,7 +11,7 @@ import { Modal } from "..";
 const PlaylistViewWrapper = () => {
 	const { id = "" } = useParams();
 	const { playlists } = useContext(PlaylistsContext);
-	const { setCurrentSong } = useContext(SongsContext);
+	const { setCurrentTrack } = useContext(TracksContext);
 	const { isOpenEdit } = useContext(ModalContext);
 
 	const selectedPlaylist = useMemo(
@@ -37,7 +37,7 @@ const PlaylistViewWrapper = () => {
 					<TrackRow
 						key={ix}
 						track={track}
-						handlePlay={(track) => setCurrentSong(track)}
+						handlePlay={(track) => setCurrentTrack(track)}
 					/>
 				))}
 			</div>

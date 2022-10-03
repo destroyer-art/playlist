@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import styles from "./Modal.module.css";
 import ModalContext from "context/modal/context";
 import close from "../../assets/close_icon.svg";
-import SongsContext from "context/songs/context";
+import TracksContext from "context/songs/context";
 import { useRef } from "react";
 import PlaylistsContext from "context/playlists/context";
 import { IPlaylist } from "@models/Playlist";
@@ -13,7 +13,7 @@ interface Props {
 }
 
 const Modal = ({ playlistId }: Props) => {
-	const { tracks } = useContext(SongsContext);
+	const { tracks } = useContext(TracksContext);
 	const { closeModal } = useContext(ModalContext);
 	const { createPlaylist, editPlaylist, playlists } =
 		useContext(PlaylistsContext);

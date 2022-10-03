@@ -775,75 +775,6 @@
           "cover_art": "https://storage.googleapis.com/tech-coding-interview-assets/UPqCIaibNA.jpg",
           "waveform": "https://storage.googleapis.com/tech-coding-interview-assets/UPqCIaibNA.json",
           "spotify": "http://link.epidemicsound.com/UPqCIaibNA/spotify"
-        }
-      ]
-    },
-    {
-      "name": "yolo 2",
-      "tracks": [
-        {
-          "id": "OG1Wx1JMlm",
-          "title": "Stay in the Moment",
-          "length": 153,
-          "bpm": 96,
-          "genres": [
-            "RnB"
-          ],
-          "moods": [
-            "Hopeful",
-            "Laid Back"
-          ],
-          "main_artists": [
-            "Tyra Chantey"
-          ],
-          "featured_artists": [],
-          "audio": "https://storage.googleapis.com/tech-coding-interview-assets/OG1Wx1JMlm.mp3",
-          "cover_art": "https://storage.googleapis.com/tech-coding-interview-assets/OG1Wx1JMlm.jpg",
-          "waveform": "https://storage.googleapis.com/tech-coding-interview-assets/OG1Wx1JMlm.json",
-          "spotify": "http://link.epidemicsound.com/OG1Wx1JMlm/spotify"
-        },
-        {
-          "id": "h7dyRs7SRh",
-          "title": "Lantern Room",
-          "length": 269,
-          "bpm": 80,
-          "genres": [
-            "Indie Pop",
-            "2020s Pop"
-          ],
-          "moods": [
-            "Dark",
-            "Mysterious"
-          ],
-          "main_artists": [
-            "Torii Wolf"
-          ],
-          "featured_artists": [],
-          "audio": "https://storage.googleapis.com/tech-coding-interview-assets/h7dyRs7SRh.mp3",
-          "cover_art": "https://storage.googleapis.com/tech-coding-interview-assets/h7dyRs7SRh.jpg",
-          "waveform": "https://storage.googleapis.com/tech-coding-interview-assets/h7dyRs7SRh.json",
-          "spotify": "http://link.epidemicsound.com/h7dyRs7SRh/spotify"
-        },
-        {
-          "id": "0dQiJavYYb",
-          "title": "Hellonelia",
-          "length": 208,
-          "bpm": 0,
-          "genres": [
-            "Indie Pop"
-          ],
-          "moods": [
-            "Laid Back",
-            "Sentimental"
-          ],
-          "main_artists": [
-            "Martin Hall"
-          ],
-          "featured_artists": [],
-          "audio": "https://storage.googleapis.com/tech-coding-interview-assets/0dQiJavYYb.mp3",
-          "cover_art": "https://storage.googleapis.com/tech-coding-interview-assets/0dQiJavYYb.jpg",
-          "waveform": "https://storage.googleapis.com/tech-coding-interview-assets/0dQiJavYYb.json",
-          "spotify": "http://link.epidemicsound.com/0dQiJavYYb/spotify"
         },
         {
           "id": "em55KruCAt",
@@ -869,70 +800,48 @@
           "spotify": "http://link.epidemicsound.com/em55KruCAt/spotify"
         },
         {
-          "id": "RZQbWVB8XQ",
-          "title": "Maiden Voyage",
-          "length": 245,
-          "bpm": 108,
+          "id": "b1Oq8Scoei",
+          "title": "Present",
+          "length": 237,
+          "bpm": 63,
           "genres": [
-            "Funk"
+            "K-pop"
           ],
           "moods": [
-            "Happy",
-            "Restless"
-          ],
-          "main_artists": [
-            "Duke Herrington"
-          ],
-          "featured_artists": [],
-          "audio": "https://storage.googleapis.com/tech-coding-interview-assets/RZQbWVB8XQ.mp3",
-          "cover_art": "https://storage.googleapis.com/tech-coding-interview-assets/RZQbWVB8XQ.jpg",
-          "waveform": "https://storage.googleapis.com/tech-coding-interview-assets/RZQbWVB8XQ.json",
-          "spotify": "http://link.epidemicsound.com/RZQbWVB8XQ/spotify"
-        },
-        {
-          "id": "rQMxJJ48DR",
-          "title": "Backyard Stories",
-          "length": 186,
-          "bpm": 110,
-          "genres": [
-            "Soft House"
-          ],
-          "moods": [
-            "Happy",
+            "Romantic",
             "Laid Back"
           ],
           "main_artists": [
-            "Sum Wave"
+            "Adelyn Paik"
           ],
           "featured_artists": [],
-          "audio": "https://storage.googleapis.com/tech-coding-interview-assets/rQMxJJ48DR.mp3",
-          "cover_art": "https://storage.googleapis.com/tech-coding-interview-assets/rQMxJJ48DR.jpg",
-          "waveform": "https://storage.googleapis.com/tech-coding-interview-assets/rQMxJJ48DR.json",
-          "spotify": "http://link.epidemicsound.com/rQMxJJ48DR/spotify"
+          "audio": "https://storage.googleapis.com/tech-coding-interview-assets/b1Oq8Scoei.mp3",
+          "cover_art": "https://storage.googleapis.com/tech-coding-interview-assets/b1Oq8Scoei.jpg",
+          "waveform": "https://storage.googleapis.com/tech-coding-interview-assets/b1Oq8Scoei.json",
+          "spotify": "http://link.epidemicsound.com/b1Oq8Scoei/spotify"
         },
         {
-          "id": "CNl5uZ2W8p",
-          "title": "Grasp of Freedom",
-          "length": 176,
+          "id": "Uec7QGEctL",
+          "title": "Sorry",
+          "length": 145,
           "bpm": 110,
           "genres": [
-            "Alternative"
+            "Indie Pop"
           ],
           "moods": [
-            "Epic",
-            "Happy"
+            "Hopeful",
+            "Sentimental"
           ],
           "main_artists": [
-            "Christoffer Moe Ditlevsen"
+            "Alex Kehm"
           ],
           "featured_artists": [],
-          "audio": "https://storage.googleapis.com/tech-coding-interview-assets/CNl5uZ2W8p.mp3",
-          "cover_art": "https://storage.googleapis.com/tech-coding-interview-assets/CNl5uZ2W8p.jpg",
-          "waveform": "https://storage.googleapis.com/tech-coding-interview-assets/CNl5uZ2W8p.json",
-          "spotify": "http://link.epidemicsound.com/CNl5uZ2W8p/spotify"
+          "audio": "https://storage.googleapis.com/tech-coding-interview-assets/Uec7QGEctL.mp3",
+          "cover_art": "https://storage.googleapis.com/tech-coding-interview-assets/Uec7QGEctL.jpg",
+          "waveform": "https://storage.googleapis.com/tech-coding-interview-assets/Uec7QGEctL.json",
+          "spotify": "http://link.epidemicsound.com/Uec7QGEctL/spotify"
         }
-      ],
-      "id": "BIygecS"
+      ]
     }
   ]
 }

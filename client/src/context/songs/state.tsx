@@ -1,45 +1,47 @@
+import axios from "axios";
 import { Track } from "@models/Track";
 import React, { useReducer } from "react";
-import * as modalActions from "./actions";
-import SongsContext, { ISongsContext } from "./context";
-import { songsReducer } from "./reducer";
+import * as trackActions from "./actions";
+import TracksContext, { ITracksContext } from "./context";
+import { tracksReducer } from "./reducer";
 
-const SongState = (props: any) => {
+const TracksState = (props: any) => {
 	const initialState = {
 		tracks: [],
 		currentTrack: undefined,
-		setCurrentSong: () => {},
-		setAllSongs: () => {},
-	} as ISongsContext;
+		fetchTracks: () => {},
+		setCurrentTrack: () => {},
+	} as ITracksContext;
 
-	const [state, dispatch] = useReducer(songsReducer, initialState);
+	const [state, dispatch] = useReducer(tracksReducer, initialState);
 
-	const setAllSongs = (songs: Track[]) => {
+	const fetchTracks = async () => {
+		const { data } = await axios.get("http://0.0.0.0:3000/allTracks");
 		dispatch({
-			type: modalActions.SET_ALL_SONGS,
-			payload: songs,
+			type: trackActions.SET_ALL_TRACKS,
+			payload: data,
 		});
 	};
 
-	const setCurrentSong = (song?: Track) => {
+	const setCurrentTrack = (song?: Track) => {
 		dispatch({
-			type: modalActions.SET_CURRENT_SONG,
+			type: trackActions.SET_CURRENT_TRACK,
 			payload: song,
 		});
 	};
 
 	return (
-		<SongsContext.Provider
+		<TracksContext.Provider
 			value={{
 				tracks: state.tracks,
 				currentTrack: state.currentTrack,
-				setCurrentSong,
-				setAllSongs,
+				setCurrentTrack,
+				fetchTracks,
 			}}
 		>
 			{props.children}
-		</SongsContext.Provider>
+		</TracksContext.Provider>
 	);
 };
 
-export default SongState;
+export default TracksState;
