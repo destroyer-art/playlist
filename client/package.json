@@ -20,7 +20,10 @@
 	},
 	"scripts": {
 		"prestart": "npm install",
-		"start": "PORT=3006 react-scripts start",
+		"start": "react-scripts start",
+		"start:dev": "PORT=3006 react-scripts start",
+		"start:JsonServer": "json-server --watch db.json",
+		"concurrent": "concurrently --kill-others \" npm run start:JsonServer \" \"npm run start:dev\"",
 		"build": "react-scripts build",
 		"test": "react-scripts test",
 		"eject": "react-scripts eject"
@@ -43,5 +46,8 @@
 			"last 1 safari version"
 		]
 	},
-	"devDependencies": {}
+	"devDependencies": {
+		"concurrently": "^7.4.0",
+		"json-server": "^0.17.0"
+	}
 }

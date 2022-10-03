@@ -689,136 +689,49 @@
       ]
     },
     {
-      "id": "3",
-      "name": "Mocca",
+      "name": "hello",
       "tracks": [
         {
-          "id": "wisy1XipVR",
-          "title": "We Had Ramen",
+          "id": "ZkuGOyOiiE",
+          "title": "Se Acabó",
           "length": 168,
-          "bpm": 85,
+          "bpm": 98,
           "genres": [
-            "Alternative Hip Hop"
-          ],
-          "moods": [
-            "Relaxing",
-            "Dreamy"
-          ],
-          "main_artists": [
-            "Smartface"
-          ],
-          "featured_artists": [],
-          "audio": "https://storage.googleapis.com/tech-coding-interview-assets/wisy1XipVR.mp3",
-          "cover_art": "https://storage.googleapis.com/tech-coding-interview-assets/wisy1XipVR.jpg",
-          "waveform": "https://storage.googleapis.com/tech-coding-interview-assets/wisy1XipVR.json",
-          "spotify": "http://link.epidemicsound.com/wisy1XipVR/spotify"
-        },
-        {
-          "id": "CNl5uZ2W8p",
-          "title": "Grasp of Freedom",
-          "length": 176,
-          "bpm": 110,
-          "genres": [
-            "Alternative"
-          ],
-          "moods": [
-            "Epic",
-            "Happy"
-          ],
-          "main_artists": [
-            "Christoffer Moe Ditlevsen"
-          ],
-          "featured_artists": [],
-          "audio": "https://storage.googleapis.com/tech-coding-interview-assets/CNl5uZ2W8p.mp3",
-          "cover_art": "https://storage.googleapis.com/tech-coding-interview-assets/CNl5uZ2W8p.jpg",
-          "waveform": "https://storage.googleapis.com/tech-coding-interview-assets/CNl5uZ2W8p.json",
-          "spotify": "http://link.epidemicsound.com/CNl5uZ2W8p/spotify"
-        },
-        {
-          "id": "QnBAVToyin",
-          "title": "Damned if We Do",
-          "length": 219,
-          "bpm": 120,
-          "genres": [
-            "2020s Pop"
-          ],
-          "moods": [
-            "Sad",
-            "Restless"
-          ],
-          "main_artists": [
-            "Maybe"
-          ],
-          "featured_artists": [],
-          "audio": "https://storage.googleapis.com/tech-coding-interview-assets/QnBAVToyin.mp3",
-          "cover_art": "https://storage.googleapis.com/tech-coding-interview-assets/QnBAVToyin.jpg",
-          "waveform": "https://storage.googleapis.com/tech-coding-interview-assets/QnBAVToyin.json",
-          "spotify": "http://link.epidemicsound.com/QnBAVToyin/spotify"
-        },
-        {
-          "id": "UPqCIaibNA",
-          "title": "Snow Flower",
-          "length": 208,
-          "bpm": 80,
-          "genres": [
-            "K-pop"
-          ],
-          "moods": [
-            "Relaxing",
-            "Laid Back"
-          ],
-          "main_artists": [
-            "Adelyn Paik"
-          ],
-          "featured_artists": [],
-          "audio": "https://storage.googleapis.com/tech-coding-interview-assets/UPqCIaibNA.mp3",
-          "cover_art": "https://storage.googleapis.com/tech-coding-interview-assets/UPqCIaibNA.jpg",
-          "waveform": "https://storage.googleapis.com/tech-coding-interview-assets/UPqCIaibNA.json",
-          "spotify": "http://link.epidemicsound.com/UPqCIaibNA/spotify"
-        },
-        {
-          "id": "em55KruCAt",
-          "title": "Where the Sunflowers Bloom",
-          "length": 194,
-          "bpm": 114,
-          "genres": [
-            "Indie Pop"
+            "Modern Latin"
           ],
           "moods": [
             "Happy",
-            "Hopeful"
+            "Restless"
           ],
           "main_artists": [
-            "Elin Sandberg"
-          ],
-          "featured_artists": [
-            "Christine Smit"
-          ],
-          "audio": "https://storage.googleapis.com/tech-coding-interview-assets/em55KruCAt.mp3",
-          "cover_art": "https://storage.googleapis.com/tech-coding-interview-assets/em55KruCAt.jpg",
-          "waveform": "https://storage.googleapis.com/tech-coding-interview-assets/em55KruCAt.json",
-          "spotify": "http://link.epidemicsound.com/em55KruCAt/spotify"
-        },
-        {
-          "id": "b1Oq8Scoei",
-          "title": "Present",
-          "length": 237,
-          "bpm": 63,
-          "genres": [
-            "K-pop"
-          ],
-          "moods": [
-            "Romantic",
-            "Laid Back"
-          ],
-          "main_artists": [
-            "Adelyn Paik"
+            "Lawd Ito"
           ],
           "featured_artists": [],
-          "audio": "https://storage.googleapis.com/tech-coding-interview-assets/b1Oq8Scoei.mp3",
-          "cover_art": "https://storage.googleapis.com/tech-coding-interview-assets/b1Oq8Scoei.jpg",
-          "waveform": "https://storage.googleapis.com/tech-coding-interview-assets/b1Oq8Scoei.json",
-          "spotify": "http://link.epidemicsound.com/b1Oq8Scoei/spotify"
+          "audio": "https://storage.googleapis.com/tech-coding-interview-assets/ZkuGOyOiiE.mp3",
+          "cover_art": "https://storage.googleapis.com/tech-coding-interview-assets/ZkuGOyOiiE.jpg",
+          "waveform": "https://storage.googleapis.com/tech-coding-interview-assets/ZkuGOyOiiE.json",
+          "spotify": "http://link.epidemicsound.com/ZkuGOyOiiE/spotify"
+        },
+        {
+          "id": "IFZpDGwLZD",
+          "title": "Give Me Meaning or Let Me Go",
+          "length": 160,
+          "bpm": 125,
+          "genres": [
+            "Dance"
+          ],
+          "moods": [
+            "Happy",
+            "Running"
+          ],
+          "main_artists": [
+            "Neon One"
+          ],
+          "featured_artists": [],
+          "audio": "https://storage.googleapis.com/tech-coding-interview-assets/IFZpDGwLZD.mp3",
+          "cover_art": "https://storage.googleapis.com/tech-coding-interview-assets/IFZpDGwLZD.jpg",
+          "waveform": "https://storage.googleapis.com/tech-coding-interview-assets/IFZpDGwLZD.json",
+          "spotify": "http://link.epidemicsound.com/IFZpDGwLZD/spotify"
         },
         {
           "id": "Uec7QGEctL",
@@ -841,7 +754,8 @@
           "waveform": "https://storage.googleapis.com/tech-coding-interview-assets/Uec7QGEctL.json",
           "spotify": "http://link.epidemicsound.com/Uec7QGEctL/spotify"
         }
-      ]
+      ],
+      "id": "tjdJEba"
     }
   ]
 }
