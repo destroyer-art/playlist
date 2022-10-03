@@ -61,15 +61,15 @@
 	outline: none;
 }
 
-.availableSongsContainer ul {
+.availableTracksContainer ul {
 	list-style: none;
 	padding: 0;
 }
-.availableSongsContainer ul li {
+.availableTracksContainer ul li {
 	cursor: pointer;
 	padding: 0 36px;
 }
 
-.availableSongsContainer ul li:hover {
+.availableTracksContainer ul li:hover {
 	background-color: rgb(210, 156, 165);
 }

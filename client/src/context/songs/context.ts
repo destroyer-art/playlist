@@ -5,7 +5,7 @@ export interface ITracksContext {
 	readonly tracks: Track[];
 	readonly currentTrack?: Track;
 	fetchTracks: () => void;
-	setCurrentTrack: (song?: Track) => void;
+	setCurrentTrack: (track?: Track) => void;
 }
 
 const TracksContext = createContext({} as ITracksContext);

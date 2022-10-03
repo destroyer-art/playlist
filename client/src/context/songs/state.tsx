@@ -23,10 +23,10 @@ const TracksState = (props: any) => {
 		});
 	};
 
-	const setCurrentTrack = (song?: Track) => {
+	const setCurrentTrack = (track?: Track) => {
 		dispatch({
 			type: trackActions.SET_CURRENT_TRACK,
-			payload: song,
+			payload: track,
 		});
 	};
 

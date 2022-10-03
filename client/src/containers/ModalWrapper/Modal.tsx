@@ -80,7 +80,7 @@ const Modal = ({ playlistId }: Props) => {
 					</button>
 				)}
 			</div>
-			<div className={styles.availableSongsContainer}>
+			<div className={styles.availableTracksContainer}>
 				<ul ref={availableTracksRef}>
 					{tracks.map((track) => (
 						<li
