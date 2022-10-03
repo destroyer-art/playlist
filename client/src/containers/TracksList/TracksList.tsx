@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { TrackRow } from "../../components";
 import { Track } from "@models/Track";
-import TracksContext from "context/songs/context";
+import TracksContext from "context/tracks/context";
 
 interface Props {
 	handlePlay: (track: Track) => void;

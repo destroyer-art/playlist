@@ -3,7 +3,6 @@ import {
 	BrowserRouter as Router,
 	Routes,
 	Route,
-	redirect,
 	Navigate,
 } from "react-router-dom";
 import styles from "./App.module.css";
@@ -16,7 +15,7 @@ import {
 } from "./containers";
 import { AudioPlayer } from "./components";
 import ModalState from "context/modal/state";
-import TracksContext from "context/songs/context";
+import TracksContext from "context/tracks/context";
 import PlaylistState from "context/playlists/state";
 import { Track } from "@models/Track";
 

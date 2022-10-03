@@ -2,10 +2,9 @@ import React, { useContext, useEffect, useState } from "react";
 import styles from "./Modal.module.css";
 import ModalContext from "context/modal/context";
 import close from "../../assets/close_icon.svg";
-import TracksContext from "context/songs/context";
+import TracksContext from "context/tracks/context";
 import { useRef } from "react";
 import PlaylistsContext from "context/playlists/context";
-import { IPlaylist } from "@models/Playlist";
 import { Track } from "@models/Track";
 
 interface Props {

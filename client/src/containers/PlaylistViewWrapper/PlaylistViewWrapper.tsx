@@ -3,7 +3,7 @@ import { TrackRow, DropdownMenu } from "../../components";
 import PlaylistsContext from "context/playlists/context";
 import { useContext } from "react";
 import { useParams } from "react-router-dom";
-import TracksContext from "context/songs/context";
+import TracksContext from "context/tracks/context";
 import styles from "./Styles.module.css";
 import ModalContext from "context/modal/context";
 import { Modal } from "..";

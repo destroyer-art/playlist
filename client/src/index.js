@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import TracksState from "context/songs/state";
+import TracksState from "context/tracks/state";
 
 ReactDOM.render(
   <React.StrictMode>

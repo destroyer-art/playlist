@@ -2,7 +2,7 @@ import React, { useRef, useState, useEffect } from "react";
 import { Track } from "@models/Track";
 import styles from "./AudioPlayer.module.css";
 import { useContext } from "react";
-import TracksContext from "context/songs/context";
+import TracksContext from "context/tracks/context";
 
 type AudioEvent = Event & {
 	target: { currentTime: number; duration: number; value: number };
