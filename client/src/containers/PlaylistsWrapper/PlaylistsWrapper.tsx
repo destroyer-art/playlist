@@ -8,11 +8,10 @@ import PlaylistsContext from "context/playlists/context";
 
 const PlaylistsWrapper = () => {
 	const { isOpenCreate } = useContext(ModalContext);
-	const { playlists } = useContext(PlaylistsContext);
+	const { playlists, fetchPlaylists } = useContext(PlaylistsContext);
 
-	//useffect to fetch playlists
 	useEffect(() => {
-		//call async method from context
+		fetchPlaylists();
 	}, []);
 
 	return (

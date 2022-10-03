@@ -9,6 +9,7 @@ export interface IPlaylists {
 	setPlaylists: (playlists: IPlaylistWithId) => void;
 	createPlaylist: (name: string, track_ids: string[]) => void;
 	editPlaylist: (playlistId: string, track_ids: string[]) => void;
+	fetchPlaylists: () => void;
 }
 
 const PlaylistsContext = createContext({} as IPlaylists);

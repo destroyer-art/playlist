@@ -4,6 +4,7 @@ import {
 	Routes,
 	Route,
 	redirect,
+	Navigate,
 } from "react-router-dom";
 import styles from "./App.module.css";
 
@@ -24,7 +25,7 @@ function App() {
 		useContext(SongsContext);
 
 	useEffect(() => {
-		fetch("http://0.0.0.0:8000/tracks/", { mode: "cors" })
+		fetch("http://0.0.0.0:3000/allTracks", { mode: "cors" })
 			.then((res) => res.json())
 			.then((data) => setAllSongs(data));
 	}, []);
@@ -48,6 +49,7 @@ function App() {
 									path="/playlists/:id"
 									element={<PlaylistViewWrapper />}
 								/>
+								<Route path="*" element={<Navigate to="/tracks" replace />} />
 							</Routes>
 						</Router>
 					</main>

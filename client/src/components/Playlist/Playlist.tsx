@@ -12,7 +12,7 @@ interface Props {
 const Playlist = ({ name, playlistTracks = [], id }: Props) => {
 	const previewTracks = useMemo(
 		() =>
-			playlistTracks.length && playlistTracks.length > 4
+			playlistTracks.length && playlistTracks.length >= 4
 				? playlistTracks.slice(0, 4)
 				: [playlistTracks[0]],
 		[playlistTracks]

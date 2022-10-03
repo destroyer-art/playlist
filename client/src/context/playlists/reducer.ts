@@ -18,7 +18,12 @@ export const playlistReducer = (state: IPlaylists, action: any) => {
 		case playlistActions.SET_PLAYLISTS:
 			return {
 				...state,
-				playlists: action.playlists,
+				playlists: action.payload,
+			};
+		case playlistActions.FETCH_PLAYLISTS_SUCCESS:
+			return {
+				...state,
+				playlists: action.payload,
 			};
 		default:
 			return state;
