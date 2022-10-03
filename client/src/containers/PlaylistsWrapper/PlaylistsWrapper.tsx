@@ -23,7 +23,12 @@ const PlaylistsWrapper = () => {
 			</div>
 			<div className={styles.playlistsOverview}>
 				{Object.entries(playlists).map(([id, list]) => (
-					<Playlist name={list.name} playlistTracks={list.tracks} id={id} />
+					<Playlist
+						key={id}
+						name={list.name}
+						playlistTracks={list.tracks}
+						id={id}
+					/>
 				))}
 			</div>
 		</>
