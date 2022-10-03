@@ -28,7 +28,7 @@ const Modal = ({ playlistId }: Props) => {
 			setPlaylistName(selectedPlaylist.name);
 			updateSelectedForPlaylist(selectedPlaylist.tracks);
 		}
-	}, [playlistId]);
+	}, [playlistId, playlists]);
 
 	const availableTracksRef = useRef<HTMLUListElement>(null);
 

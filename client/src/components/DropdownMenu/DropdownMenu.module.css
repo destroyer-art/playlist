@@ -4,23 +4,34 @@
 }
 
 .menu {
-	position: absolute;
-	background: white;
-	color: black;
-	width: 129px;
-	height: 45px;
-	border-radius: 3px;
-	display: flex;
+	top: 10px;
+	left: 10px;
 	gap: 3px;
+	width: 129px;
+	height: 80px;
+	display: flex;
+	color: black;
+	padding: 0;
+	list-style: none;
+	position: absolute;
+	border-radius: 3px;
+	background: white;
 	flex-direction: column;
 	align-items: flex-start;
-	list-style: none;
-	padding: 5px 0;
 }
 
 .menu li {
-	width: 92%;
-	padding: 0px 5px;
+	width: 88%;
+	height: 40px;
+	display: flex;
+	padding: 0px 8px;
+	align-items: center;
+}
+.menu li:first-child {
+	border-radius: 3px 3px 0 0;
+}
+.menu li:last-child {
+	border-radius: 0 0 3px 3px;
 }
 .menu li:hover {
 	background: rgb(239, 228, 228);

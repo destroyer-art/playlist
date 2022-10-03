@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect } from "react";
+import React, { useRef, useState, useEffect, useCallback } from "react";
 import { Track } from "@models/Track";
 import styles from "./AudioPlayer.module.css";
 import { useContext } from "react";
@@ -22,10 +22,10 @@ const AudioPlayer = ({ track }: { track: Track }) => {
 		setIsPlaying(false);
 	};
 
-	const handlePlaybackEnded = () => {
+	const handlePlaybackEnded = useCallback(() => {
 		setCurrentTrack(undefined);
 		setIsPlaying(false);
-	};
+	}, [setCurrentTrack]);
 
 	const handleTimeUpdate = (e: any) => {
 		setProgress(e.target.currentTime / e.target.duration);
@@ -49,7 +49,7 @@ const AudioPlayer = ({ track }: { track: Track }) => {
 		audioRef.current.addEventListener("play", handlePlay);
 		audioRef.current.addEventListener("pause", handlePause);
 		audioRef.current.addEventListener("timeupdate", handleTimeUpdate);
-	}, []);
+	}, [handlePlaybackEnded]);
 
 	useEffect(() => {
 		audioRef.current.play();

@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect } from "react";
 import { Playlist } from "../../components";
 import { CreatePlaylist } from "../../components";
 import ModalContext from "context/modal/context";

@@ -1,6 +1,6 @@
 import ModalContext from "context/modal/context";
 import PlaylistsContext from "context/playlists/context";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useState } from "react";
 import { useContext } from "react";
 import menu from "../../assets/menuIcon.png";
 import styles from "./DropdownMenu.module.css";
