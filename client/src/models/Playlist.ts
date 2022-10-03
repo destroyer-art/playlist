@@ -5,6 +5,7 @@ export interface IPlaylistWithId {
 }
 
 export interface IPlaylist {
+	id: string;
 	name: string;
 	tracks: Track[];
 }

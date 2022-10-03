@@ -1,31 +1,26 @@
-import { IPlaylistWithId } from "@models/Playlist";
+import axios from "axios";
+import { Track } from "@models/Track";
 import React, { useReducer } from "react";
 import * as playlistActions from "./actions";
-import PlaylistContext, { IPlaylists } from "./context";
-
+import PlaylistContext, { IPlaylistsContext } from "./context";
 import { playlistReducer } from "./reducer";
 
 const PlaylistState = (props: any) => {
 	const initialState = {
-		playlists: {},
+		playlists: [],
 		isLoading: false,
-		setPlaylists: () => {},
 		createPlaylist: () => {},
 		deletePlaylist: () => {},
 		editPlaylist: () => {},
 		fetchPlaylists: () => {},
-		selectPlaylist: () => ({}),
-	} as IPlaylists;
+	} as IPlaylistsContext;
 
 	const [state, dispatch] = useReducer(playlistReducer, initialState);
 
 	const fetchPlaylists = async () => {
 		dispatch({ type: playlistActions.FETCH_PLAYLISTS });
 		try {
-			const response = await fetch("http://0.0.0.0:3000/playlists", {
-				mode: "cors",
-			});
-			const data = await response.json();
+			const { data } = await axios.get("http://0.0.0.0:3000/playlists");
 			dispatch({
 				type: playlistActions.FETCH_PLAYLISTS_SUCCESS,
 				payload: data,
@@ -35,52 +30,57 @@ const PlaylistState = (props: any) => {
 		}
 	};
 
-	const createPlaylist = (name: string, track_ids: string[]) => {
-		dispatch({
-			type: playlistActions.CREATE_PLAYLIST,
-		});
-		//make request here and
-		//dispatch({type: playlistActions.CREATE_PLAYLIST_SUCCESS});
-		// or
-		//dispatch({type: playlistActions.CREATE_PLAYLIST_FAILURE});
-		console.log("Create playlist", { name, track_ids });
+	const createPlaylist = async (name: string, tracks: Track[]) => {
+		dispatch({ type: playlistActions.CREATE_PLAYLIST });
+		try {
+			const { data } = await axios.post(`http://0.0.0.0:3000/playlists/`, {
+				name,
+				tracks,
+			});
+
+			dispatch({
+				type: playlistActions.CREATE_PLAYLIST_SUCCESS,
+				payload: data,
+			});
+		} catch (error) {
+			dispatch({ type: playlistActions.CREATE_PLAYLIST_FAILURE });
+		}
 	};
 
-	const setPlaylists = (playlists: IPlaylistWithId) => {
-		dispatch({
-			type: playlistActions.SET_PLAYLISTS,
-			payload: playlists,
-		});
-	};
-
-	const selectPlaylist = (id: string) => state.playlists[id];
-
-	const deletePlaylist = (id: string) => {
-		console.log({ delete: id });
-
+	const deletePlaylist = async (playlistId: string) => {
 		dispatch({
 			type: playlistActions.DELETE_PLAYLIST,
 		});
-		//make DELETE request with id
-		//dispatch({type: playlistActions.DELETE_PLAYLIST_SUCCESS});
-		// or
-		//dispatch({type: playlistActions.DELETE_PLAYLIST_FAILURE});
-
-		//redirect to playlists page
+		try {
+			await axios.delete(`http://0.0.0.0:3000/playlists/${playlistId}`);
+			dispatch({ type: playlistActions.DELETE_PLAYLIST_SUCCESS });
+		} catch (error) {
+			dispatch({ type: playlistActions.DELETE_PLAYLIST_FAILURE });
+		}
+		return window.location.replace("/playlists");
 	};
 
-	const editPlaylist = (playlistId: string, track_ids: string[]) => {
-		dispatch({
-			type: playlistActions.UPDATE_PLAYLIST,
-		});
-		//make PUT request with id
-		//dispatch({type: playlistActions.UPDATE_PLAYLIST_SUCCESS});
-		// or
-		//dispatch({type: playlistActions.UPDATE_PLAYLIST_FAILURE});
-
-		//redirect to playlists page
-
-		console.log("Edit playlist", { playlistId, track_ids });
+	const editPlaylist = async (
+		playlistId: string,
+		updatedTracks: Track[],
+		playlistName: string
+	) => {
+		dispatch({ type: playlistActions.UPDATE_PLAYLIST });
+		try {
+			const { data } = await axios.patch(
+				`http://0.0.0.0:3000/playlists/${playlistId}`,
+				{
+					name: playlistName,
+					tracks: updatedTracks,
+				}
+			);
+			dispatch({
+				type: playlistActions.UPDATE_PLAYLIST_SUCCESS,
+				payload: data,
+			});
+		} catch (error) {
+			dispatch({ type: playlistActions.UPDATE_PLAYLIST_FAILURE });
+		}
 	};
 
 	return (
@@ -89,8 +89,6 @@ const PlaylistState = (props: any) => {
 				playlists: state.playlists,
 				isLoading: state.isLoading,
 				createPlaylist,
-				selectPlaylist,
-				setPlaylists,
 				deletePlaylist,
 				editPlaylist,
 				fetchPlaylists,

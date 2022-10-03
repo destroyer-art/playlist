@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useMemo } from "react";
 import { TrackRow, DropdownMenu } from "../../components";
 import PlaylistsContext from "context/playlists/context";
 import { useContext } from "react";
@@ -14,23 +14,34 @@ const PlaylistViewWrapper = () => {
 	const { setCurrentSong } = useContext(SongsContext);
 	const { isOpenEdit } = useContext(ModalContext);
 
+	const selectedPlaylist = useMemo(
+		() => playlists.find((p) => `${p.id}` === id),
+		[playlists, id]
+	);
+
+	if (!selectedPlaylist) {
+		return <div>Not found</div>;
+	}
+
 	return (
-		<div className={styles.playlistPreview}>
-			<div className={styles.titleBar}>
-				<h2>{playlists[id].name}</h2>
-				<div className={styles.menu}>
-					<DropdownMenu playlistId={id} />
+		selectedPlaylist && (
+			<div className={styles.playlistPreview}>
+				<div className={styles.titleBar}>
+					<h2>{selectedPlaylist.name}</h2>
+					<div className={styles.menu}>
+						<DropdownMenu playlistId={id} />
+					</div>
 				</div>
+				{isOpenEdit && <Modal playlistId={id} />}
+				{selectedPlaylist.tracks.map((track, ix) => (
+					<TrackRow
+						key={ix}
+						track={track}
+						handlePlay={(track) => setCurrentSong(track)}
+					/>
+				))}
 			</div>
-			{isOpenEdit && <Modal playlistId={id} />}
-			{playlists[id].tracks.map((track, ix) => (
-				<TrackRow
-					key={ix}
-					track={track}
-					handlePlay={(track) => setCurrentSong(track)}
-				/>
-			))}
-		</div>
+		)
 	);
 };
 

@@ -6,6 +6,7 @@ import SongsContext from "context/songs/context";
 import { useRef } from "react";
 import PlaylistsContext from "context/playlists/context";
 import { IPlaylist } from "@models/Playlist";
+import { Track } from "@models/Track";
 
 interface Props {
 	readonly playlistId?: string;
@@ -18,14 +19,15 @@ const Modal = ({ playlistId }: Props) => {
 		useContext(PlaylistsContext);
 
 	const [playlistName, setPlaylistName] = useState("New Playlist");
-	const [selectedForPlaylist, updateSelectedForPlaylist] = useState<string[]>(
+	const [selectedForPlaylist, updateSelectedForPlaylist] = useState<Track[]>(
 		[]
 	);
 
 	useEffect(() => {
-		if (playlistId && playlists[playlistId]) {
-			setPlaylistName(playlists[playlistId].name);
-			updateSelectedForPlaylist(playlists[playlistId].tracks.map((t) => t.id));
+		const selectedPlaylist = playlists.find((p) => p.id === playlistId);
+		if (playlistId && selectedPlaylist) {
+			setPlaylistName(selectedPlaylist.name);
+			updateSelectedForPlaylist(selectedPlaylist.tracks);
 		}
 	}, [playlistId]);
 
@@ -35,30 +37,30 @@ const Modal = ({ playlistId }: Props) => {
 		setPlaylistName((e.target as HTMLInputElement).value);
 	};
 
-	const toggleSelectTrack = (id: string) => {
+	const toggleSelectTrack = (track: Track) => {
 		if (availableTracksRef.current) {
 			const element = Array.from(availableTracksRef.current.children).find(
-				(li) => li.getAttribute("id") === id
+				(li) => li.getAttribute("id") === track.id
 			);
 			element?.classList.contains("selected")
 				? element?.classList.remove("selected")
 				: element?.classList.add("selected");
 		}
 
-		updateSelectedForPlaylist((selected) => {
-			const i = selected.indexOf(id);
-			if (i == -1) return [...selected, id];
-			return selected.filter((c) => c !== id);
+		updateSelectedForPlaylist((selectedTracks) => {
+			const found = selectedTracks.find((s) => s.id === track.id);
+			if (!found) return [...selectedTracks, track];
+			return selectedTracks.filter((c) => c.id !== track.id);
 		});
 	};
 
 	const handleOnPlaylistCreate = () => {
-		if (!selectedForPlaylist.length) return; //display an error that new list is empty
+		if (!selectedForPlaylist.length) return;
 		createPlaylist(playlistName, selectedForPlaylist);
 	};
 	const handleOnPlaylistEdit = () => {
-		if (!selectedForPlaylist.length) return; //display an error that new list is empty
-		editPlaylist(playlistId!, selectedForPlaylist);
+		if (!selectedForPlaylist.length) return;
+		editPlaylist(playlistId!, selectedForPlaylist, playlistName);
 	};
 
 	const handleOnModalClose = () => closeModal();
@@ -84,9 +86,11 @@ const Modal = ({ playlistId }: Props) => {
 						<li
 							id={track.id}
 							key={track.id}
-							onClick={() => toggleSelectTrack(track.id)}
+							onClick={() => toggleSelectTrack(track)}
 							className={
-								selectedForPlaylist.includes(track.id) ? "selected" : ""
+								selectedForPlaylist.find((s) => s.id === track.id)
+									? "selected"
+									: ""
 							}
 						>
 							{track.title} by {track.main_artists}

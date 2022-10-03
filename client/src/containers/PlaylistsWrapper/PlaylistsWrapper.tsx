@@ -21,12 +21,12 @@ const PlaylistsWrapper = () => {
 				{isOpenCreate && <Modal />}
 			</div>
 			<div className={styles.playlistsOverview}>
-				{Object.entries(playlists).map(([id, list]) => (
+				{playlists.map((playlist) => (
 					<Playlist
-						key={id}
-						name={list.name}
-						playlistTracks={list.tracks}
-						id={id}
+						key={playlist.id}
+						name={playlist.name}
+						playlistTracks={playlist.tracks}
+						id={playlist.id}
 					/>
 				))}
 			</div>
